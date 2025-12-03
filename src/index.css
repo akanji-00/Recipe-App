@@ -13,9 +13,15 @@
    2. Root variables
    ========================= */
 :root {
-  --clr-light: hsl(0, 0%, 95%);
-  --clr-dark: hsl(0, 0%, 10%);
-  --clr-accent: hsl(39, 75%, 40%);
+  --clr-caccent-2: hsl(0, 22%, 64%);
+  --clr-text: hsl(19, 16%, 20%);
+  --clr-accent: hsl(44, 52%, 55%);
+
+  --clr-background: hsl(40, 39%, 95%);
+  --clr-primary: hsl(166, 40%, 17%);
+
+  --ff-header: "Cormorant Garamond", serif;
+  --ff-body: "Inter", sans-serif;
 
   --shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
     0px 1px 2px 0px rgba(0, 0, 0, 0.06);
@@ -32,17 +38,17 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--ff-body);
   color: var(--clr-dark);
   line-height: 1.6;
-  background-color: var(--clr-light);
+  background-color: var(--clr-background);
 }
 
 /* =========================
    4. Container
    ========================= */
 .container {
-  width: 90%;
+  width: 95%;
   max-width: var(--max-container-width);
   margin-inline: auto;
   padding-inline: clamp(1rem, 5vw, 2rem);
