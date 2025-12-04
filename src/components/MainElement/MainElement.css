@@ -1,1 +1,72 @@
+.main {
+  padding-block: var(--space-fluid);
+}
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-container input {
+  font-family: inherit;
+  color: inherit;
+  flex: 1;
+  font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+  border: 1px solid var(--clr-border);
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: var(--input-shadow);
+}
+
+.button {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+
+  font-family: var(--ff-body);
+  font-size: clamp(0.6rem, 0.5rem + 0.5vw, 1rem);
+  background-color: var(--clr-accent);
+  color: var(--clr-text);
+  padding-inline: 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--clr-accent-2);
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.value {
+  display: grid;
+  place-content: center;
+  padding: 5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: var(--clr-text);
+  color: var(--clr-background);
+}
+
+.operator {
+  place-self: end;
+
+  border-radius: 50%;
+  padding: 1rem;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: var(--clr-primary);
+  color: var(--clr-background);
+}
