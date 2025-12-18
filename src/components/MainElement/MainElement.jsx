@@ -60,8 +60,8 @@ export default function MainElement() {
     //     <input
     //       type="text"
     //       aria-label="Add ingredients"
-    //       placeholder="e.g. oregano"
     //       name="ingredient"
+    //       placeholder="e.g. oregano"
     //     />
     //     <button type="submit" className="button">
     //       <Plus aria-hidden="true" size=".5rem" weight="bold" />
