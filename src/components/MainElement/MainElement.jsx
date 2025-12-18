@@ -5,20 +5,17 @@ import { Minus } from "lucide-react";
 import React from "react";
 
 export default function MainElement() {
-  const [isCount, setIsCount] = React.useState(0);
+  const [myFavoriteThings, setMyFavoriteThings] = React.useState([]);
 
-  function add() {
-    setIsCount((prevCount) => prevCount + 1);
+  const allFavoriteThings = ["cats", "pizza", "coding", "movies", "nature"];
+
+  const thingsElements = myFavoriteThings.map((thing) => {
+    return <p key={thing}>{thing}</p>;
+  });
+
+  function addFavoriteThing() {
+    setMyFavoriteThings((prevFavThings) => [...prevFavThings, "test"]);
   }
-
-  function minus() {
-    if (isCount === 0) {
-      isCount;
-    } else {
-      setIsCount((prevCount) => prevCount - 1);
-    }
-  }
-
   // const ingredients = ["oregano", "chilli", "pasta"];
 
   // const ingredientItemList = ingredients.map((ingredient) => {
@@ -36,24 +33,11 @@ export default function MainElement() {
 
   return (
     <main className="container">
-      <h1>How many times will Bob say "state" in this section?</h1>
-      <div className="counter">
-        <button
-          onClick={minus}
-          aria-label="Decrease count"
-          className="operator minus"
-        >
-          <Minus />
-        </button>
-        <h2 className="value">{isCount}</h2>
-        <button
-          onClick={add}
-          aria-label="Increase count"
-          className="operator plus"
-        >
-          <Plus />
-        </button>
-      </div>
+      <button onClick={addFavoriteThing} aria-live="polite" className="value">
+        Add item
+      </button>
+
+      <section aria-live="polite">{thingsElements}</section>
     </main>
     // <main className="main">
     //   <form onClick={handleSubmit} className="form-container">
