@@ -112,3 +112,47 @@ picture {
   max-width: 100%;
   border-radius: 8px;
 }
+
+.grid {
+  display: grid;
+}
+
+.centered-content-h {
+  place-content: center;
+}
+
+.form-wrapper {
+  padding-top: 2rem;
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+.input {
+  outline: none;
+  border: 1px solid var(--clr-border);
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-family: inherit;
+  color: inherit;
+  font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+  box-shadow: var(--input-shadow);
+  margin-bottom: 1rem;
+}
+
+.form-btn {
+  padding: 0.7rem 1.5rem;
+  font-family: var(--ff-body);
+  background: transparent;
+  border: 1px solid var(--clr-accent);
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-background);
+}
