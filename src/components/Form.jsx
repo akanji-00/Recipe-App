@@ -1,10 +1,6 @@
 export default function Form() {
-  function handleSubmit(e) {
-    e.preventDefault();
+  function signUp(formData) {
     console.log("Form submitted");
-
-    const formEl = e.currentTarget;
-    const formData = new FormData(formEl);
 
     const email = formData.get("email");
     const password = formData.get("password");
@@ -17,7 +13,7 @@ export default function Form() {
       <section className="grid centered-content-h form-wrapper">
         <h1>Signup Form</h1>
 
-        <form onSubmit={handleSubmit} method="POST">
+        <form action={signUp}>
           <label htmlFor="email">Email:</label>
           <input
             id="email"
