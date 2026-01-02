@@ -1,42 +1,21 @@
+import { useState } from "react";
+
 export default function Form() {
-  function signUp(formData) {
-    console.log("Form submitted");
+  const [messages, setMessages] = useState(["ab"]);
 
-    const email = formData.get("email");
-    const password = formData.get("password");
+  let text;
 
-    console.log(password);
+  if (messages.length === 0) {
+    text = "You are all caught up";
+  } else if (messages.length === 1) {
+    text = "You have 1 unread message";
+  } else {
+    text = `You have ${messages.length} unread messages`;
   }
 
   return (
-    <>
-      <section className="grid centered-content-h form-wrapper">
-        <h1>Signup Form</h1>
-
-        <form action={signUp}>
-          <label htmlFor="email">Email:</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            className="input"
-            placeholder="ade@akanji.com"
-          />
-          <br />
-          <label htmlFor="password">Password:</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            className="input"
-          />
-          <br />
-
-          <button type="submit" className="form-btn">
-            Submit
-          </button>
-        </form>
-      </section>
-    </>
+    <div>
+      <h1>{text}</h1>
+    </div>
   );
 }

@@ -128,7 +128,7 @@ picture {
 label {
   margin-right: 0.5rem;
 }
-
+/* 
 .input {
   outline: none;
   border: 1px solid var(--clr-border);
@@ -155,4 +155,4 @@ label {
 .form-btn:hover {
   background-color: var(--clr-accent);
   color: var(--clr-background);
-}
+} */

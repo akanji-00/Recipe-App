@@ -5,11 +5,11 @@ import Form from "./components/Form";
 export default function App() {
   return (
     <>
-      <Form />
-      {/* <Header />
+      {/* <Form /> */}
+      <Header />
       <div className="container">
         <MainElement />
-      </div> */}
+      </div>
     </>
   );
 }
