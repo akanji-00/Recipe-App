@@ -48,7 +48,7 @@ export default function MainElement() {
           <ul className="ingredients-list" aria-live="polite">
             {ingredientItemList}
           </ul>
-          {ingredients.length > 4 && (
+          {ingredients.length > 3 && (
             <div className="get-recipe-container">
               <div>
                 <h3>Ready for a recipe ?</h3>
