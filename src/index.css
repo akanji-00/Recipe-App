@@ -16,8 +16,9 @@
   --clr-accent-2: hsl(0, 22%, 64%);
   --clr-text: hsl(19, 16%, 20%);
   --clr-accent: hsl(44, 52%, 55%);
+  --clr-dark: hsl(160, 13%, 5%);
 
-  --clr-background: hsl(40, 39%, 95%);
+  --clr-light: hsl(40, 39%, 95%);
   --clr-primary: hsl(166, 40%, 17%);
 
   --clr-border: hsl(216, 12%, 84%);
@@ -25,40 +26,36 @@
   --ff-header: "Cormorant Garamond", serif;
   --ff-body: "Inter", sans-serif;
 
-  --shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
-    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  --shadow:
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 
   --input-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
 
-  --max-container-width: 37.5rem; /* 600px */
+  --container-max: 37.5rem; /* 600px */
+  --container-padding: clamp(1rem, 4vw, 2rem);
 
-  --space-fluid: clamp(1.5rem, 3vw, 3rem);
-  --header-space-fluid: clamp(1.5rem, 2vw, 2rem);
+  --space-fluid: clamp(1rem, 1.5vw + 1rem, 2rem);
+  --header-space-fluid: clamp(1rem, 0.5vw + 1rem, 1.5rem);
 }
 
 /* =========================
    3. Fluid Fonts
    ========================= */
 
-html {
-  font-size: clamp(14px, 1.5vw, 18px);
-}
-
 body {
   font-family: var(--ff-body);
   color: var(--clr-text);
-  line-height: 1.6;
-  background-color: var(--clr-background);
+  background-color: white;
+  line-height: 1.1;
 }
 
 /* =========================
    4. Container
    ========================= */
+
 .container {
-  width: 95%;
-  max-width: var(--max-container-width);
+  width: min(100% - var(--container-padding) * 2, var(--container-max));
   margin-inline: auto;
-  padding-inline: clamp(1rem, 5vw, 2rem);
 }
 
 /* =========================
@@ -70,35 +67,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--clr-dark);
-  margin-block-end: 0.5em;
   line-height: 1.2;
-}
-
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.75rem;
-}
-h3 {
-  font-size: 1.5rem;
 }
 
 /* =========================
    6. Paragraphs and Links
    ========================= */
-p {
-  margin-block-end: 1em;
-}
 
 a {
   color: var(--clr-accent);
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* =========================
@@ -110,24 +88,8 @@ picture {
   height: auto;
   display: block;
   max-width: 100%;
-  border-radius: 8px;
 }
 
-.grid {
-  display: grid;
-}
-
-.centered-content-h {
-  place-content: center;
-}
-
-.form-wrapper {
-  padding-top: 2rem;
-}
-
-label {
-  margin-right: 0.5rem;
-}
 /* 
 .input {
   outline: none;
@@ -156,3 +118,127 @@ label {
   background-color: var(--clr-accent);
   color: var(--clr-background);
 } */
+
+/* ========== HEADER STYLING ========== */
+
+.header {
+  /* background-color: var(--clr-light); */
+  /* color: var(--clr-primary); */
+  padding: var(--header-space-fluid) 0;
+  text-align: center;
+  font-family: var(--ff-body);
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  font-weight: 500;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.form {
+  /* padding: var(--space-fluid); */
+  border-radius: 10px;
+  /* box-shadow: var(--shadow); */
+  /* max-width: 500px; */
+  margin: var(--space-fluid) auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-input {
+  outline: none;
+  border: 2px solid var(--clr-border);
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-family: var(--ff-body);
+  color: var(--clr-text);
+  font-weight: 500;
+  font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+  /* box-shadow: var(--input-shadow); */
+  flex: 7;
+}
+
+.form-button {
+  padding: 0.7rem;
+  font-family: var(--ff-body);
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: clamp(0.7rem, 0.5rem + 0.5vw, 0.9rem);
+  cursor: pointer;
+  flex: 3;
+}
+
+section {
+  margin-block: var(--space-fluid);
+}
+
+.ingredient-container {
+  margin-top: var(--space-fluid);
+}
+
+.ingredient-container h1 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  font-family: var(--ff-body);
+  color: var(--clr-dark);
+  margin-bottom: var(--space-fluid);
+}
+
+.ingredient-list {
+  /* list-style: none; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.ingredient-list li {
+  font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+  color: var(--clr-dark);
+}
+
+.recipe-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  background: var(--clr-light);
+  padding: clamp(1rem, 1vw + 0.5rem, 2rem);
+  border-radius: 5px;
+}
+
+.cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cta-text h2 {
+  font-size: clamp(0.8rem, 1vw + 1rem, 1.5rem);
+  font-family: var(--ff-body);
+  color: var(--clr-dark);
+  /* line-height: 1.5; */
+  /* margin-block-end: 1.5rem; */
+}
+
+.cta-text p {
+  font-size: clamp(0.6rem, 0.9rem + 0.5vw, 0.8rem);
+  color: var(--clr-dark);
+  opacity: 0.7;
+  /* line-height: 1.5; */
+}
+
+.cta-button {
+  padding: 0.5rem 1.2rem;
+  font-family: var(--ff-body);
+  background: var(--clr-accent);
+  color: var(--clr-light);
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: clamp(0.7rem, 0.5rem + 0.5vw, 0.9rem);
+  cursor: pointer;
+}
