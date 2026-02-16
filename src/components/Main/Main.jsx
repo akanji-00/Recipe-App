@@ -25,16 +25,18 @@ export default function Main() {
         <button className="form-button">Add Ingredient</button>
       </form>
 
-      <section className="ingredient-container">
-        <h1>Ingredients on hand:</h1>
-        <ul className="ingredient-list">
-          {ingredients.map((ingredient, index) => (
-            <li key={index} className="ingredient-list-item">
-              {ingredient}
-            </li>
-          ))}
-        </ul>
-      </section>
+      {ingredients.length > 0 && (
+        <section className="ingredient-container">
+          <h1>Ingredients on hand:</h1>
+          <ul className="ingredient-list">
+            {ingredients.map((ingredient, index) => (
+              <li key={index} className="ingredient-list-item">
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="recipe-cta">
         <div className="cta-text">
