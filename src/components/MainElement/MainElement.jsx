@@ -2,7 +2,7 @@ import "../MainElement/MainElement.css";
 
 import { useState } from "react";
 
-export default function MainElement() {
+export default function MainElement({ darkMode, setDarkMode }) {
   const [ingredients, setIngredients] = useState([
     // "all the main spices",
     // "pasta",
@@ -22,6 +22,12 @@ export default function MainElement() {
     return <li key={ingredient}>{ingredient}</li>;
   });
 
+  function toggleMode() {
+    setDarkMode((prevMode) => {
+      return !prevMode;
+    });
+  }
+
   function handleSubmit(formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients((currentIngredients) => [
@@ -32,7 +38,10 @@ export default function MainElement() {
   }
 
   return (
-    <main className="main">
+    <main className={darkMode ? "main darkMode" : "main lightMode"}>
+      <button className="mode" onClick={toggleMode}>
+        Mode
+      </button>
       <form action={handleSubmit} className="add-ingredient-form">
         <input
           type="text"
